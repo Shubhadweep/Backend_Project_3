@@ -1,0 +1,41 @@
+<%-include('../Includes/header.ejs') -%>
+<link rel="stylesheet" href="/CSS/showItem.css">
+</head>
+<body>
+    <%-include('../Includes/navbar.ejs') -%>
+
+<main>
+  
+    <section class="viewProduct">
+        <div class="container py-5">
+          <form action="/Logout" method="POST">
+            <button type="submit" class="logout-btn">Log out</button>
+          </form>
+          
+          <h2 class="text-center mb-4 text-dark">All Products</h2>
+          
+          <%if(data.length > 0){%>
+           <div class="row"> 
+            <%for(let obj of data){%>
+              <div class="col-lg-3 col-md-4 mb-4">
+                <div class="card text-center">
+                  <img src="/AdminImages/<%=obj.item_FirstImage%>" class="card-img-top" alt="Product Image"> 
+                  <div class="card-body">
+                    <h4 class="card-title"> Name: <%=obj.item_Name %></h4>
+                    <h4 class="card-title"> Price: Rs. <%=obj.item_Price %></h4>
+                    <a href="#" class="btn btn-primary">Buy Now</a>
+                    <a href="/softDelete/<%=obj._id%>" class="btn btn-primary">Remove Item</a>
+                  </div>
+                </div>
+              </div>
+            <%}%>
+          <%}else{%>
+            <p>Data Not Found</p>
+            <%}%>
+          </div>
+        </div>
+      </section>
+    
+    
+</main>
+<%-include('../Includes/footer.ejs') -%>

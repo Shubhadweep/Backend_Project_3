@@ -1,0 +1,19 @@
+body {
+    background-image: url(../Images/signupBg.jpg);
+    background-size: cover;
+}
+.registration-form {
+    max-width: 400px;
+    margin: 50px auto;
+    margin-bottom: 220px;
+    padding: 20px;
+    background-color: antiquewhite;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.registration-form h2 {
+    margin-bottom: 20px;
+}
+button{
+    margin-top: 20px;
+}

@@ -1,0 +1,22 @@
+
+body {
+    background-image: url(../Images/adminAddProd.jpg);
+    background-size: cover;
+}
+.form-container {
+    background-image: url(../Images/addprodForm.jpg);
+    background-size: contain;
+    padding: 30px;
+    color: azure;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 50px auto;
+    max-width: 600px;
+}
+button{
+    margin-top: 20px;
+}
+img{
+    height: 100px;
+    width: 100px;
+}

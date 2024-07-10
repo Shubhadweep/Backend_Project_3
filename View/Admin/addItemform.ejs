@@ -1,0 +1,58 @@
+<%- include('../Includes/header.ejs')-%>
+<link rel="stylesheet" href="/CSS/additem.css">
+</head>
+<body>
+    <%- include('../Includes/navbar.ejs') -%>
+    <main>
+        
+
+        <div class="container">
+            <div class="form-container">
+                <h2 class="text-center">Add Item</h2>
+                <form action="/postAdditem" method="POST" enctype="multipart/form-data">
+                    
+                    <!-- express-validation message Show -->
+
+                    <div class="form-group">
+                        <%if(frontError.length > 0){%>
+                            <%for(let err of frontError){%>
+                                <div><h6 style="color: red;"><%=err.msg%></h6></div>
+                            <%}%>
+                        <%}%>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="itemName">Item Name</label>
+                        <input type="text" class="form-control" name="itemName" placeholder="Enter item name">
+                    </div>
+                    <div class="form-group">
+                        <label for="itemCategory">Item Category</label>
+                        <select class="form-control" name="itemCategory">
+                            <option>Category A</option>
+                            <option>Category B</option>
+                            <option>Category C</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="itemPrice">Item Price</label>
+                        <input type="number" class="form-control" name="itemPrice" placeholder="Enter item price" value="<%=validationData.productPrice%>">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="itemImage1">Item Image 1</label>
+                        <input type="file" class="form-control-file" name="itemImage1">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="itemImage2">Item Image 2</label>
+                        <input type="file" class="form-control-file" name="itemImage2">
+                    </div><br>
+                    <div class="form-group">
+                        <label for="itemDescription">Item Description</label>
+                        <textarea class="form-control" name="itemDescription" rows="3" placeholder="Enter item description" ><%=validationData.productDescription%></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Add Item</button>
+                </form>
+            </div>
+        </div>
+    
+    </main>
+<%- include('../Includes/footer.ejs')-%>

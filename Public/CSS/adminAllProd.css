@@ -1,0 +1,17 @@
+body{
+    background-image: url(/Images/admin_bg.jpg);
+    background-size: cover;
+}
+.viewForm{
+    margin-bottom: 200px;
+}
+img{
+    height: 100px;
+    width: 100px;
+    
+}
+.flex-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

@@ -1,0 +1,52 @@
+<%-include('../Includes/header.ejs') -%>
+<link rel="stylesheet" href="/CSS/adminAllProd.css">
+</head>
+<body>
+    <%-include('../Includes/navbar.ejs') -%>
+
+<main>
+
+    <%if(data.length > 0){%>
+        <h2 class ="text-center text-light">All Products For Admin</h2>
+    
+    <section class ="viewForm">
+        <div class ="container py-5">
+            
+            
+                <div class="row bg-info py-2 text-center">
+                    
+                    <div class="col"><b>Product Name</b></div>
+                    <div class="col"><b>Product Price</b></div>
+                    <div class="col"><b>Product Image</b></div>
+                    
+                    <div class="col"><b>Details</b></div>
+                    <div class="col"><b>Edit</b></div>
+                </div>
+                <%for(let obj of data){%>
+                    <div class="row text-light text-center my-2">
+                        
+                        <div class="col"><%= obj.item_Name %></div>
+                        <div class="col"><%= obj.item_Price %></div>
+                        <div class="col">
+                            <div class="flex-container">
+                                <img src="/AdminImages/<%=obj.item_FirstImage%>" alt=""> 
+                                <img src="/AdminImages/<%=obj.item_SecondImage%>" alt="">
+                            </div>   
+                        </div>
+                     
+                        <div class="col">
+                            <a href="/adminCardView/<%=obj._id%>"  class="btn btn-success">card View</a>
+                        </div>
+
+                        <div class="col">
+                            <a href="/viewEditPage/<%=obj._id%>" class="btn btn-warning">Edit</a>
+                        </div>
+                    </div>
+                <%}%>
+            <%}else{%>
+                <h3>No Product Found</h3>
+                <%}%>
+        </div>
+    </section>
+</main>
+<%-include('../Includes/footer.ejs') -%>

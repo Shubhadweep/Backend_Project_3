@@ -1,0 +1,16 @@
+body{
+    background-image: url(../Images/allItemBg.jpg);
+    background-size: cover;
+}
+.card{
+    margin-top: 100px;
+    margin-left: 100px;
+}
+.card-body{
+    background-color:antiquewhite;
+    height: 200px;
+}
+img{
+    height: 300px;
+    width: 200px;
+}

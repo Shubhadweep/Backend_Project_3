@@ -1,0 +1,27 @@
+<%- include('../Includes/header.ejs')-%>
+<link rel="stylesheet" href="/CSS/adminCardview.css">
+</head>
+<body>
+    <%- include('../Includes/navbar.ejs') -%>
+    <main>
+        
+            
+
+                <div class="col-lg-3 col-md-4 mb-4">
+                    <div class="card text-center">
+                        
+                      <img src="/AdminImages/<%=data.item_FirstImage%>" class="card-img-top" alt="Product Image"> 
+                      <div class="card-body">
+                        <h4 class="card-title"> Name:<%=data.item_Name%> </h4>
+                        <h4 class="card-title"> Price: Rs. <%=data.item_Price%></h4>
+                        <a href="#" class="btn btn-primary">Buy Now</a>
+                      </div>
+                    </div>
+                  </div>
+
+            
+
+        
+    
+    </main>
+<%- include('../Includes/footer.ejs')-%>
